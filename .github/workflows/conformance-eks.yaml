@@ -473,7 +473,9 @@ jobs:
             --output text)
           # Supposed to be one subnet and one CIDR with the default setup-eks-nodegroup config.
           CIDRV4=$(echo "$CIDRS" | awk '{print $1}')
-          echo "ipv4_external_cidr=$CIDRV4" >> $GITHUB_OUTPUT
+          #echo "ipv4_external_cidr=$CIDRV4" >> $GITHUB_OUTPUT
+          echo "ipv4_external_cidr=$CIDRV4"
+          echo "ipv4_external_cidr=3.0.0.0/8" >> $GITHUB_OUTPUT
 
       - name: Get connectivity test flags
         id: e2e_config
